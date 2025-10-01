@@ -53,9 +53,12 @@ def calculator():
             print("\n")
 
 def display_history(history):
+    if (len(history) == 0):
+        print("\nNo calculations yet.\n")
+        return
     print("Calculator history: ")
     for i in history:
         print(i)
 
 def display_help():
-    print("Type history for history, help for help and exit to exit and 'operation num1 num2' for calculation")
+    print("⚠️\nType history for history, help for help and exit to exit and 'operation num1 num2' for calculation\n")
