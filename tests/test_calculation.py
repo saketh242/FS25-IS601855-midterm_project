@@ -44,7 +44,7 @@ def test_factory_register_subtract():
 
 
 def test_factory_register_multiply():
-    c = CalculationFactory.register_calculation("mulitply", 2, 4)
+    c = CalculationFactory.register_calculation("multiply", 2, 4)
     assert isinstance(c, MultiplyCalculation)
 
 
