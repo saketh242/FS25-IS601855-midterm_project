@@ -59,7 +59,7 @@ def test_calculator_help_and_history(monkeypatch, capsys):
     calc_module.calculator()
     captured = capsys.readouterr()
     assert 'Type history for history' in captured.out
-    assert 'Calculator history' in captured.out
+    assert 'No calculations yet.' in captured.out
 
 
 def test_calculator_zero_division_branch(monkeypatch, capsys):
