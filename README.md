@@ -1,7 +1,5 @@
 # Module 4: Assignment-Professional Calculator Command-Line Application with 100% Test Coverage
 
-   ```
-
 ## Usage
 
 Run the calculator:
