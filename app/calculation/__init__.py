@@ -26,7 +26,7 @@ class CalculationFactory:
             return AddCalculation(a, b)
         elif calculation_type == "subtract":
             return SubtractCalculation(a,b)
-        elif calculation_type == "mulitply":
+        elif calculation_type == "multiply":
             return MultiplyCalculation(a, b)
         elif calculation_type == "divide":
             return DivideCalculation(a, b)
