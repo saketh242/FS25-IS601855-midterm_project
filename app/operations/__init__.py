@@ -17,5 +17,14 @@ class Operations:
         if (b == 0):
             raise ValueError("Cannot divide by zero")
         return a / b
+
+    @staticmethod
+    def power(a, b):
+        return a ** b
+    
+    @staticmethod
+    def root(a, b):
+        return a ** (1/b)
+
     
     

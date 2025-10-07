@@ -1,0 +1,106 @@
+INFO:root:2025-10-06 19:51:42 Welcome to the calculator!
+INFO:root:2025-10-06 19:59:06 user_input: 
+INFO:root:2025-10-06 21:24:13 Welcome to the calculator!
+INFO:root:2025-10-06 21:25:14 Welcome to the calculator!
+INFO:root:2025-10-06 21:25:20 user_input: add
+INFO:root:2025-10-06 21:25:22 The result is 3.0
+INFO:root:2025-10-06 21:25:25 user_input: history
+INFO:root:2025-10-06 21:25:38 user_input: subtract
+INFO:root:2025-10-06 21:25:40 The result is -1.0
+INFO:root:2025-10-06 21:25:46 user_input: history
+INFO:root:2025-10-06 21:25:51 user_input: power
+INFO:root:2025-10-06 21:26:29 Welcome to the calculator!
+INFO:root:2025-10-06 21:26:32 user_input: add 1 2
+INFO:root:2025-10-06 21:26:38 Welcome to the calculator!
+INFO:root:2025-10-06 21:26:39 user_input: add
+INFO:root:2025-10-06 21:26:40 The result is 3.0
+INFO:root:2025-10-06 21:26:44 user_input: subtract
+INFO:root:2025-10-06 21:26:45 The result is -1.0
+INFO:root:2025-10-06 21:26:50 user_input: multiply
+INFO:root:2025-10-06 21:26:52 The result is 12.0
+INFO:root:2025-10-06 21:26:59 user_input: divide
+INFO:root:2025-10-06 21:27:00 The result is 2.0
+INFO:root:2025-10-06 21:27:03 user_input: power
+INFO:root:2025-10-06 21:27:04 The result is 81.0
+INFO:root:2025-10-06 21:27:09 user_input: root 4 2
+INFO:root:2025-10-06 21:27:14 Welcome to the calculator!
+INFO:root:2025-10-06 21:29:23 Welcome to the calculator!
+INFO:root:2025-10-06 21:29:25 user_input: add
+INFO:root:2025-10-06 21:29:26 The result is 3.0
+INFO:root:2025-10-06 21:29:30 user_input: subtract
+INFO:root:2025-10-06 21:29:31 The result is -1.0
+INFO:root:2025-10-06 21:29:37 user_input: multiply
+INFO:root:2025-10-06 21:29:38 The result is 12.0
+INFO:root:2025-10-06 21:29:40 user_input: divide
+INFO:root:2025-10-06 21:29:42 The result is 2.0
+INFO:root:2025-10-06 21:29:46 user_input: power
+INFO:root:2025-10-06 21:29:47 The result is 16.0
+INFO:root:2025-10-06 21:29:50 user_input: root
+INFO:root:2025-10-06 21:29:53 The result is 2.449489742783178
+INFO:root:2025-10-06 21:29:56 user_input: history
+INFO:root:2025-10-06 21:30:43 user_input: save
+INFO:root:2025-10-06 21:31:43 Welcome to the calculator!
+INFO:root:2025-10-06 21:34:59 Welcome to the calculator!
+INFO:root:2025-10-06 21:35:02 user_input: add
+INFO:root:2025-10-06 21:35:04 The result is 3.0
+INFO:root:2025-10-06 21:35:07 user_input: subtract
+INFO:root:2025-10-06 21:35:08 The result is -1.0
+INFO:root:2025-10-06 21:35:13 user_input: multiply
+INFO:root:2025-10-06 21:35:14 The result is 12.0
+INFO:root:2025-10-06 21:35:17 user_input: divide
+INFO:root:2025-10-06 21:35:20 The result is 3.0
+INFO:root:2025-10-06 21:35:23 user_input: power
+INFO:root:2025-10-06 21:35:24 The result is 81.0
+INFO:root:2025-10-06 21:35:29 user_input: root
+INFO:root:2025-10-06 21:35:32 The result is 6.0
+INFO:root:2025-10-06 21:35:36 user_input: history
+INFO:root:2025-10-06 21:35:42 user_input: undo
+INFO:root:2025-10-06 21:35:45 user_input: history
+INFO:root:2025-10-06 21:35:49 user_input: redo
+INFO:root:2025-10-06 21:35:51 user_input: history
+INFO:root:2025-10-06 21:35:53 user_input: undo
+INFO:root:2025-10-06 21:35:55 user_input: undo
+INFO:root:2025-10-06 21:35:59 user_input: history
+INFO:root:2025-10-06 21:36:01 user_input: redo
+INFO:root:2025-10-06 21:36:03 user_input: redo
+INFO:root:2025-10-06 21:36:05 user_input: history
+INFO:root:2025-10-06 21:36:10 user_input: save
+INFO:root:2025-10-06 21:37:23 Welcome to the calculator!
+INFO:root:2025-10-06 21:43:08 user_input: add
+INFO:root:2025-10-06 21:43:09 The result is 3.0
+INFO:root:2025-10-06 21:43:16 user_input: multiply
+INFO:root:2025-10-06 21:43:16 The result is 12.0
+INFO:root:2025-10-06 21:43:20 user_input: multiply
+INFO:root:2025-10-06 21:43:22 The result is 224.0
+INFO:root:2025-10-06 21:43:25 user_input: history
+INFO:root:2025-10-06 21:43:27 user_input: clear
+INFO:root:2025-10-06 21:43:29 user_input: history
+INFO:root:2025-10-06 21:43:31 user_input: add
+INFO:root:2025-10-06 21:43:32 The result is 5.0
+INFO:root:2025-10-06 21:43:35 user_input: subtract
+INFO:root:2025-10-06 21:43:36 The result is -1.0
+INFO:root:2025-10-06 21:43:41 user_input: multiply
+INFO:root:2025-10-06 21:43:42 The result is 30.0
+INFO:root:2025-10-06 21:43:46 user_input: divide
+INFO:root:2025-10-06 21:43:48 The result is 2.5
+INFO:root:2025-10-06 21:43:52 user_input: power
+INFO:root:2025-10-06 21:43:53 The result is 1024.0
+INFO:root:2025-10-06 21:44:00 user_input: root
+INFO:root:2025-10-06 21:44:02 The result is 10.0
+INFO:root:2025-10-06 21:44:06 user_input: history
+INFO:root:2025-10-06 21:44:08 user_input: save
+INFO:root:2025-10-06 21:44:27 user_input: exit
+INFO:root:2025-10-06 21:44:31 Welcome to the calculator!
+INFO:root:2025-10-06 21:53:21 user_input: history
+INFO:root:2025-10-06 21:53:23 user_input: load
+INFO:root:2025-10-06 21:53:27 user_input: history
+INFO:root:2025-10-06 21:54:50 Welcome to the calculator!
+INFO:root:2025-10-06 21:55:37 Welcome to the calculator!
+INFO:root:2025-10-06 21:55:39 user_input: load
+INFO:root:2025-10-06 21:55:41 user_input: history
+INFO:root:2025-10-06 22:01:08 Welcome to the calculator!
+INFO:root:2025-10-06 22:01:08 user_input: exit
+INFO:root:2025-10-06 22:01:35 Welcome to the calculator!
+INFO:root:2025-10-06 22:01:35 user_input: exit
+INFO:root:2025-10-06 22:01:35 Welcome to the calculator!
+INFO:root:2025-10-06 22:01:35 user_input: exit
