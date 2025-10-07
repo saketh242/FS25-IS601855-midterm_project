@@ -6,6 +6,75 @@ from app.calculation import Calculation, CalculationFactory
 from app.log_logic import log_operation
 
 
+def process_command(user_input, history, undo_history):
+    log_operation(f"user_input: {user_input}")
+    if user_input == "exit":
+        print("Thank you for using the calculator. Bye!\n")
+        return True  # Signal to exit
+
+    elif user_input == "history":
+        display_history(history)
+        return False
+
+    elif user_input == "help":
+        display_help()
+        return False
+
+    elif user_input == "undo":
+        if len(history) > 0:
+            undo_history.append(history.pop())
+        else:
+            print("No history to undo")
+        return False
+
+    elif user_input == "redo":
+        if len(undo_history) > 0:
+            history.append(undo_history.pop())
+        else:
+            print("No history to redo")
+        return False
+
+    elif user_input == "clear":
+        history.clear()
+        undo_history.clear()
+        return False
+
+    elif user_input == "save":
+        save_history(history)
+        return False
+
+    elif user_input == "load":
+        loaded = load_history()
+        history.extend(loaded)
+        return False
+
+    elif user_input in ["add", "subtract", "multiply", "divide", "power", "root"]:
+        try:
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
+            calc = CalculationFactory.register_calculation(user_input, num1, num2)
+            if calc is not None:
+                history.append(calc)
+                result = calc.execute()
+                print(f"\nThe result is {result}\n")
+                log_operation(f"The result is {result}")
+            else:
+                print("Invalid operation")
+        except ValueError:
+            print("🫤  Enter not a valid number.\n")
+        except ZeroDivisionError:
+            print("🫠  You know we cannot divide by zero.\n")
+        except Exception as e:
+            print("😭  Unexpected error:", e)
+            print("\n")
+        return False
+
+    else:
+        print("😭Invalid input")
+        display_help()
+        return False
+
+
 def calculator():
 
     history: List[Calculation] = []
@@ -28,72 +97,8 @@ def calculator():
             .strip()
             .lower()
         )
-        log_operation(f"user_input: {user_input}")
-        if user_input == "exit":
-            print("Thank you for using the calculator. Bye!\n")
+        if process_command(user_input, history, undo_history):
             break
-
-        elif user_input == "history":
-            display_history(history)
-            continue
-
-        elif user_input == "help":
-            display_help()
-            continue
-
-        elif user_input == "undo":
-            if len(history) > 0:
-                undo_history.append(history.pop())
-                continue
-            else:
-                print("No history to undo")
-                continue
-
-        elif user_input == "redo":
-            if len(undo_history) > 0:
-                history.append(undo_history.pop())
-                continue
-            else:
-                print("No history to redo")
-                continue
-
-        elif user_input == "clear":
-            history.clear()
-            undo_history.clear()
-            continue
-
-        elif user_input == "save":
-            save_history(history)
-            continue
-
-        elif user_input == "load":
-            history = load_history()
-            continue
-
-        elif user_input in ["add", "subtract", "multiply", "divide", "power", "root"]:
-
-            try:
-                num1 = float(input("Enter the first number: "))
-                num2 = float(input("Enter the second number: "))
-                calc = CalculationFactory.register_calculation(user_input, num1, num2)
-                history.append(calc)
-                result = calc.execute()
-                print(f"\nThe result is {result}\n")
-                log_operation(f"The result is {result}")
-
-            except ValueError:
-                print("🫤  Enter not a valid number.\n")
-
-            except ZeroDivisionError:
-                print("🫠  You know we cannot divide by zero.\n")
-
-            except Exception as e:
-                print("😭  Unexpected error:", e)
-                print("\n")
-
-        else:
-            print("😭Invalid input")
-            display_help()
 
 
 def display_history(history):

@@ -10,7 +10,7 @@ LOG_FILE = os.path.join(PROJECT_ROOT, "logs", "calculator.log")
 
 
 def log_operation(operation: str):
-    logging.basicConfig(filename=LOG_FILE, level=logging.INFO)
+    logging.basicConfig(filename=LOG_FILE, level=logging.INFO, force=True)  # force to reconfigure
     logging.info(datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " " + operation)
 
 

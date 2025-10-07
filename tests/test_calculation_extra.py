@@ -19,5 +19,5 @@ def test_factory_invalid():
 
 def test_divide_by_zero_in_calculation():
     c = CalculationFactory.register_calculation("divide", 1, 0)
-    with pytest.raises(ValueError):
+    with pytest.raises(ZeroDivisionError):
         c.execute()

@@ -20,5 +20,5 @@ def test_divide():
 
 
 def test_divide_by_zero():
-    with pytest.raises(ValueError):
+    with pytest.raises(ZeroDivisionError):
         Operations.divide(1, 0)

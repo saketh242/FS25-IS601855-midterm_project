@@ -3,6 +3,7 @@ import os
 from app.calculator import calculator, display_history, display_help, save_history, load_history
 from app.calculation import CalculationFactory
 from app.log_logic import log_operation, get_log
+import logging
 
 def test_display_history_empty(capsys):
     display_history([])
@@ -48,5 +49,7 @@ def test_log_operation_and_get_log(tmp_path, monkeypatch):
     from app.log_logic import LOG_FILE
     monkeypatch.setattr("app.log_logic.LOG_FILE", str(tmp_path / "calculator.log"))
     log_operation("Test operation")
+    logging.getLogger().handlers[0].flush()
+    logging.shutdown()
     log_contents = get_log()
     assert "Test operation" in log_contents
