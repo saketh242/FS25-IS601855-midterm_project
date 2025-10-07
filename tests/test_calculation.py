@@ -1,12 +1,7 @@
-import pytest
 
-from app.calculation import (
-    AddCalculation,
-    SubtractCalculation,
-    MultiplyCalculation,
-    DivideCalculation,
-    CalculationFactory,
-)
+from app.calculation import (AddCalculation, CalculationFactory,
+                             DivideCalculation, MultiplyCalculation,
+                             SubtractCalculation)
 
 
 def test_add_calculation_execute_and_str():

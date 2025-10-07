@@ -2,6 +2,7 @@ import pytest
 
 from app.operations import Operations
 
+
 def test_add():
     assert Operations.add(1, 2) == 3
 
