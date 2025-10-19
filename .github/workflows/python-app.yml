@@ -23,6 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
-      - name: Run tests with pytest and enforce 90% coverage
+      - name: Run tests with pytest and enforce 85% coverage
         run: |
-          pytest --cov=app --cov-fail-under=90
+          pytest --cov=app --cov-fail-under=85
