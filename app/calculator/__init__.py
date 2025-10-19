@@ -92,7 +92,7 @@ def calculator():
     while True:
         user_input = (
             input(
-                "Enter operation(add, subtract, multiply, divide, power, root) exit, history, undo, redo, help and quit: \n"
+                "Enter operation(add, subtract, multiply, divide, power, root, modulus, integer divison, percentage, absolute difference) exit, history, undo, redo, help and quit: \n"
             )
             .strip()
             .lower()

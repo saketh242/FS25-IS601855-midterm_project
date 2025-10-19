@@ -116,3 +116,50 @@ class RootCalculation(Calculation):
 
     def __str__(self):
         return f"{self.a} root {self.b} = {self.execute()}"
+
+class ModulusCalcualtion(Calculation):
+    def __init__(self, a: float, b: float, operation: str = "") -> None:
+        self.a: float = a
+        self.b: float = b
+        self.operation: str = operation
+    def execute(self) -> float:
+        return Operations.modulus(self.a, self.b)
+
+    def __str__(self):
+        return f"{self.a} modulus {self.b} = {self.execute()}"
+
+class IntegerDivisionCalcualtion(Calculation):
+    def __init__(self, a: float, b: float, operation: str = "") -> None:
+        self.a: float = a
+        self.b: float = b
+        self.operation: str = operation
+
+    def execute(self) -> float:
+        return Operations.integer_division(self.a, self.b)
+
+    def __str__(self):
+        return f"{self.a} integer division {self.b} = {self.execute()}"
+
+class PercentageCalcualtion(Calculation):
+    def __init__(self, a: float, b: float, operation: str = "") -> None:
+        self.a: float = a
+        self.b: float = b
+        self.operation: str = operation
+
+    def execute(self) -> float:
+        return Operations.percentage(self.a, self.b)
+
+    def __str__(self):
+        return f"{self.a} % {self.b} = {self.execute()}"
+
+class AbsoluteDifferenceCalcualtion(Calculation):
+    def __init__(self, a: float, b: float, operation: str = "") -> None:
+        self.a: float = a
+        self.b: float = b
+        self.operation: str = operation
+
+    def execute(self) -> float:
+        return Operations.percentage(self.a, self.b)
+
+    def __str__(self):
+        return f"{self.a} absolute difference {self.b} = {self.execute()}"

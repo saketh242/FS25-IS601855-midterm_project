@@ -25,3 +25,21 @@ class Operations:
     @staticmethod
     def root(a, b):
         return a ** (1 / b)
+
+    @staticmethod
+    def modulus(a, b):
+        return a % b
+
+    @staticmethod
+    def integer_division(a, b):
+        return a // b
+
+    @staticmethod
+    def percentage(a, b):
+        return a * b / 100
+
+    @staticmethod
+    def absolute_difference(a, b):
+        return abs(a - b)
+    
+    
