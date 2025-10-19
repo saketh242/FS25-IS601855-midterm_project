@@ -1,4 +1,5 @@
 import csv
+import os
 from datetime import datetime
 from typing import List
 
@@ -10,7 +11,7 @@ def process_command(user_input, history, undo_history):
     log_operation(f"user_input: {user_input}")
     if user_input == "exit":
         print("Thank you for using the calculator. Bye!\n")
-        return True  # Signal to exit
+        return True 
 
     elif user_input == "history":
         display_history(history)
@@ -48,7 +49,7 @@ def process_command(user_input, history, undo_history):
         history.extend(loaded)
         return False
 
-    elif user_input in ["add", "subtract", "multiply", "divide", "power", "root"]:
+    elif user_input in ["add", "subtract", "multiply", "divide", "power", "root", "absolute difference", "modulus", "percentage", "integer division"]:
         try:
             num1 = float(input("Enter the first number: "))
             num2 = float(input("Enter the second number: "))
@@ -58,6 +59,10 @@ def process_command(user_input, history, undo_history):
                 result = calc.execute()
                 print(f"\nThe result is {result}\n")
                 log_operation(f"The result is {result}")
+                if os.getenv('CALCULATOR_AUTO_SAVE', 'false').lower() == 'true':
+                    max_hist = int(os.getenv('CALCULATOR_MAX_HISTORY_SIZE', '1000'))
+                    if len(history) <= max_hist:
+                        save_history(history)
             else:
                 print("Invalid operation")
         except ValueError:
@@ -118,6 +123,10 @@ def display_help():
     print("operation num1 num2 for the calculation")
     print("power for the power of the number")
     print("root for the root of the number")
+    print("modulus for the rmainder when dividing the numbers")
+    print("absolute difference for the absolute difference between the numbers")
+    print("integer division for the integer division between the numbers")
+    print("percentage for finding the percentage")
     print("undo to undo the last operation")
     print("redo to redo the last operation")
     print("clear to clear the history")
@@ -128,7 +137,10 @@ def display_help():
 
 
 def save_history(history):
-    with open("calculator.csv", "w") as file:
+    history_dir = os.getenv('CALCULATOR_HISTORY_DIR', 'csv_file')
+    file_path = os.path.join(history_dir, "calculator.csv")
+    
+    with open(file_path, "w") as file:
         writer = csv.writer(file)
         writer.writerow(["Operation", "Operand1", "Operand2", "Result", "Timestamp"])
         for i in history:
@@ -145,8 +157,11 @@ def save_history(history):
 
 def load_history():
     loaded_calculations = []
+    history_dir = os.getenv('CALCULATOR_HISTORY_DIR', 'csv_file')
+    file_path = os.path.join(history_dir, "calculator.csv")
+    
     try:
-        with open("calculator.csv", "r") as file:
+        with open(file_path, "r") as file:
             reader = csv.reader(file)
             next(reader)
 
@@ -159,11 +174,11 @@ def load_history():
                     calc = CalculationFactory.register_calculation(operation, a, b)
                     loaded_calculations.append(calc)
 
-            print(f"Loaded {len(loaded_calculations)} calculations from calculator.csv")
+            print(f"Loaded {len(loaded_calculations)} calculations from {file_path}")
             return loaded_calculations
 
     except FileNotFoundError:
-        print("No saved history file found (calculator.csv)")
+        print(f"No saved history file found ({file_path})")
         return []
     except Exception as e:
         print(f"Error loading history: {e}")
