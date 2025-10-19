@@ -5,6 +5,8 @@ from typing import List
 
 from app.calculation import Calculation, CalculationFactory
 from app.log_logic import log_operation
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def process_command(user_input, history, undo_history):
@@ -60,7 +62,7 @@ def process_command(user_input, history, undo_history):
                 print(f"\nThe result is {result}\n")
                 log_operation(f"The result is {result}")
                 if os.getenv('CALCULATOR_AUTO_SAVE', 'false').lower() == 'true':
-                    max_hist = int(os.getenv('CALCULATOR_MAX_HISTORY_SIZE', '1000'))
+                    max_hist = int(os.getenv('CALCULATOR_MAX_HISTORY_SIZE') or '1000')
                     if len(history) <= max_hist:
                         save_history(history)
             else:
