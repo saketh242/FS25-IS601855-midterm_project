@@ -141,20 +141,21 @@ def display_help():
 def save_history(history):
     history_dir = os.getenv('CALCULATOR_HISTORY_DIR', 'csv_file')
     file_path = os.path.join(history_dir, "calculator.csv")
-    
+
+    # Ensure directory exists before saving
+    os.makedirs(history_dir, exist_ok=True)
+
     with open(file_path, "w") as file:
         writer = csv.writer(file)
         writer.writerow(["Operation", "Operand1", "Operand2", "Result", "Timestamp"])
         for i in history:
-            writer.writerow(
-                [
-                    i.operation,
-                    i.a,
-                    i.b,
-                    i.execute(),
-                    datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                ]
-            )
+            writer.writerow([
+                i.operation,
+                i.a,
+                i.b,
+                i.execute(),
+                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            ])
 
 
 def load_history():
